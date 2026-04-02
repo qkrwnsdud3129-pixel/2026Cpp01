@@ -94,6 +94,8 @@ int main()
     cout << "Radius: " << circle4.getRadius() << endl;
 
     cout << Circle::getCount() << "개\n";
+    //cout << Circle4.getCount() << "개\n";  //getCount도 Circle클래스의 멤버함수로 인스턴스.getCount. 가능 단 소멸되지않았을때
+    //cout << Circle6.getCount() << "개\n"; // 이미 소멸된 개체라 사용불가. 오류발생
 
     return 0;
 }
