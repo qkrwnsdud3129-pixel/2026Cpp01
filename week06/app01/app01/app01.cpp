@@ -27,12 +27,12 @@ public:
         radius = c.radius;
         count++;
     }
-
+    // destructor
     ~Circle() {
         cout << this << "원 객체 소멸\n";
         count--;
     }
-    // inline member function 
+    // inline member function
     double getRadius() const {
         return radius;
     }
@@ -60,9 +60,9 @@ inline void Circle::setRadius(double value)
     radius = value;
 }
 
-Circle circle5;  // global object
+Circle circle5(50.0);  // global object
 
-void test() {
+Circle* test() {
     Circle circle6(2.0);
     Circle* circle7 = new Circle(circle6);  // allocate heap memory
 
@@ -73,8 +73,9 @@ void test() {
     cout << (*circle7).getRadius() << '\n';
     cout << circle7->getRadius() << '\n';
 
-    delete circle7; // free heap memory
+    //delete circle7; // free heap memory
     cout << Circle::getCount() << "개\n";
+    return circle7;
 }
 
 int main()
@@ -89,7 +90,10 @@ int main()
 
     cout << Circle::getCount() << "개\n";
 
-    test();
+    Circle* circle8 = test();
+    cout << circle8->getRadius() << '\n';
+    cout << circle8->getArea() << '\n';
+    delete circle8;
 
     cout << Circle::getCount() << "개\n";
 
@@ -105,8 +109,7 @@ int main()
     cout << "Radius: " << circle4.getRadius() << endl;
 
     cout << Circle::getCount() << "개\n";
-    //cout << Circle4.getCount() << "개\n";  //getCount도 Circle클래스의 멤버함수로 인스턴스.getCount. 가능 단 소멸되지않았을때
-    //cout << Circle6.getCount() << "개\n"; // 이미 소멸된 개체라 사용불가. 오류발생
-
+    //cout << circle4.getCount() << "개\n";
+    //cout << circle6.getCount() << "개\n";
     return 0;
 }
