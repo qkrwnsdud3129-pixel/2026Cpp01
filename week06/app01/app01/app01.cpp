@@ -64,10 +64,16 @@ Circle circle5;  // global object
 
 void test() {
     Circle circle6(2.0);
-    Circle*circle7 = new Circle(circle6);
+    Circle* circle7 = new Circle(circle6);  // allocate heap memory
 
     cout << Circle::getCount() << "개\n";
-    delete circle7;
+
+    cout << circle6.getRadius() << '\n';
+    //cout << circle7.getRadius() << '\n';  // error. circle7은 객체가 아닌 지역 포인터 변수
+    cout << (*circle7).getRadius() << '\n';
+    cout << circle7->getRadius() << '\n';
+
+    delete circle7; // free heap memory
     cout << Circle::getCount() << "개\n";
 }
 
