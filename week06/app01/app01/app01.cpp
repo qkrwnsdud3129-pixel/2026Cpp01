@@ -1,6 +1,6 @@
 // stack memory : parameters, local variables
 // static(data) memory : global object, static object
-// heap memory : dtnamic memory 
+// heap memory : dynamic memory allocation (allocate at running time)
 
 #include <iostream>
 using namespace std;
