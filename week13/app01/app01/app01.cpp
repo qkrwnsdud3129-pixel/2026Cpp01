@@ -1,6 +1,5 @@
-#include "pokemon.h"
-#include "pokemon.h"  // duplicated code
 #include "pikachu.h"
+#include "squirtle.h"
 
 int main()
 {
@@ -17,5 +16,14 @@ int main()
     cout << pikachu2.getHp() << endl;
     cout << pikachu2.getElectricAttack() << endl;
 
+    
+    Squirtle squirtle(500, 4000);  // parameter
+    cout << squirtle.getHp() << endl;
+    cout << squirtle.getHydroAttack() << endl;
+
+    Squirtle squirtle2(squirtle);  // copy
+    cout << squirtle2.getHp() << endl;
+    cout << squirtle2.getHydroAttack() << endl;
+      
     return 0;
-}
+} 

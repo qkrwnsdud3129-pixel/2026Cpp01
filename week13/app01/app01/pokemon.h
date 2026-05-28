@@ -7,7 +7,7 @@
 #include <string>
 using namespace std;
 
-//class Pokemon final // »ó¼Ó ºÒ°¡
+//class Pokemon final // 상속 불가
 class Pokemon
 {
 private:
