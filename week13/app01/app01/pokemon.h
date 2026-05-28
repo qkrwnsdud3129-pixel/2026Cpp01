@@ -7,6 +7,7 @@
 #include <string>
 using namespace std;
 
+//class Pokemon final // »ó¼Ó ºÒ°¡
 class Pokemon
 {
 private:
